@@ -1,3 +1,12 @@
 body {
   text-align: center;
 }
+
+.bird {
+  width: 51px;
+  height: 36px;
+}
+
+.secondBird {
+  transform: rotate(45deg);
+}

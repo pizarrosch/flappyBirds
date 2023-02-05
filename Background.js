@@ -1,6 +1,6 @@
 class Background {
   constructor() {
-    this.speed = 2;
+    this.speed = 4;
     this.index = 0;
   }
 
