@@ -55,8 +55,10 @@ class Background {
     )
 
     bird.render(background);
+    column.render();
 
     window.requestAnimationFrame(background.render);
+
   }
 
   start() {

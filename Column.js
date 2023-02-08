@@ -3,7 +3,13 @@ class Column {
     this.speed = 4;
     this.index = 0;
   }
-  render(bird) {
+
+  render() {
+
+    // Note: to create columns on various random heights, possibly only one of a pair
+    // e.g. the one on the upper side should be changed and then, for the position of
+    // the one at the bottom the gap must be subtracted
+
     column.index += 0.3;
 
     const columnDirection = -((column.index * column.speed) % canvas.width);
@@ -18,7 +24,7 @@ class Column {
     const firstColumnImage = {
       x: columnDirection,
       y: 0,
-      width: bird.birdSize[0] * 2,
+      width:78,
       height: 318
     }
 
@@ -32,7 +38,7 @@ class Column {
     const secondColumnImage = {
       x: columnDirection,
       y: 450,
-      width: bird.birdSize[0] * 2,
+      width: 78,
       height: 318
     }
 
@@ -45,9 +51,9 @@ class Column {
 
     const thirdColumnImage = {
       x: firstColumnImage.x + 2.76 * firstColumnSource.width,
-      y: 0,
-      width: bird.birdSize[0] * 2,
-      height: 318
+      y: -Math.floor((Math.random() * thirdColumnSource.height) + canvas.height / 2),
+      width: 78,
+      height: 530
     }
 
     const fourthColumnSource = {
@@ -59,9 +65,9 @@ class Column {
 
     const fourthColumnImage = {
       x: firstColumnImage.x + 2.76 * firstColumnSource.width,
-      y: 450,
-      width: bird.birdSize[0] * 2,
-      height: 318
+      y: thirdColumnImage.y + 192,
+      width: 78,
+      height: 530
     }
 
     const fifthColumnSource = {
@@ -74,7 +80,7 @@ class Column {
     const fifthColumnImage = {
       x: thirdColumnImage.x + 2.76 * firstColumnSource.width,
       y: 0,
-      width: bird.birdSize[0] * 2,
+      width: 78,
       height: 318
     }
 
@@ -88,7 +94,7 @@ class Column {
     const sixthColumnImage = {
       x: fourthColumnImage.x + 2.76 * firstColumnSource.width,
       y: 450,
-      width: bird.birdSize[0] * 2,
+      width: 78,
       height: 318
     }
 
@@ -102,7 +108,7 @@ class Column {
     const seventhColumnImage = {
       x: fifthColumnImage.x + 2.76 * firstColumnSource.width,
       y: 0,
-      width: bird.birdSize[0] * 2,
+      width: 78,
       height: 318
     }
 
@@ -116,7 +122,7 @@ class Column {
     const eighthColumnImage = {
       x: sixthColumnImage.x + 2.76 * firstColumnSource.width,
       y: 450,
-      width: bird.birdSize[0] * 2,
+      width: 78,
       height: 318
     }
 

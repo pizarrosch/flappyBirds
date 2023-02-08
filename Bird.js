@@ -49,7 +49,8 @@ class Bird {
 
     bird.moveBird = {
       x: canvas.width / 2 - bird.birdSize[0] / 2,
-      y: bird.birdDirection + canvas.height / 2,
+      // y: bird.birdDirection + canvas.height / 2,
+      y: canvas.height / 2,
       width: bird.birdSize[0],
       height: bird.birdSize[1]
     }
@@ -68,7 +69,7 @@ class Bird {
     )
 
 
-    column.render(bird);
+
   }
 }
 
