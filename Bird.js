@@ -1,11 +1,12 @@
 class Bird {
+  moveBird;
+
   constructor() {
     this.birdSize = [51, 36];
     this.index = 0;
-    this.gravity = 10;
+    this.gravity = 3;
     this.birdSource = null;
-    this.moveBird = null;
-    this.birdDirection = 0;
+    this.birdY = canvas.height / 2;
    /* this.birds = [
       {
         x: 432,
@@ -50,7 +51,7 @@ class Bird {
     bird.moveBird = {
       x: canvas.width / 2 - bird.birdSize[0] / 2,
       // y: bird.birdDirection + canvas.height / 2,
-      y: canvas.height / 2,
+      y: this.birdY,
       width: bird.birdSize[0],
       height: bird.birdSize[1]
     }
@@ -68,8 +69,24 @@ class Bird {
       bird.moveBird.height
     )
 
+    this.birdY += bird.gravity;
 
 
+
+  }
+
+  gameOver() {
+    ctx.drawImage(
+      gameOverImage,
+      193,
+      228,
+      187,
+      36,
+      canvas.width / 2 - 87 ,
+      388,
+      187,
+      36
+    )
   }
 }
 

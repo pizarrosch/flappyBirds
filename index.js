@@ -1,7 +1,8 @@
 class Game {
   render() {
-
     background.start();
+
+
 
   }
 }
