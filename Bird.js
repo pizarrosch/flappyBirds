@@ -87,7 +87,10 @@ class Bird {
       187,
       36
     )
+   const gameOver = document.getElementById('gameOver');
+    
   }
+
 }
 
 const bird = new Bird();

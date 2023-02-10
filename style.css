@@ -1,5 +1,6 @@
 body {
   text-align: center;
+  position: relative;
 }
 
 .bird {
@@ -9,4 +10,16 @@ body {
 
 .secondBird {
   transform: rotate(45deg);
+}
+
+.score {
+  display: block;
+  width: 40px;
+  height: 40px;
+  font-size: 60px;
+  font-family: 'Press Start 2P' , sans-serif;
+  color: black;
+  position: absolute;
+  top: 250px;
+  left: 600px;
 }

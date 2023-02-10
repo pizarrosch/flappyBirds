@@ -13,7 +13,7 @@ class Background {
     this.index = 0;
     this.pipe[0] = {
       x: canvas.width,
-      y: -504
+      y: -204
     }
   }
 
@@ -132,7 +132,7 @@ class Background {
           x: canvas.width,
           y: Math.floor(Math.random() * background.pipeNorthSource.height) - background.pipeNorthSource.height
         })
-        console.log(background.pipeSouthImage.x + background.pipeSouthImage.width)
+        console.log(background.pipeSouthImage.x + background.pipeSouthImage.width / 2)
       }
 
 
@@ -142,11 +142,14 @@ class Background {
     bird.render(background);
     const frame = requestAnimationFrame(background.render);
 
-    if(((bird.moveBird.x >= background.pipeSouthImage.x ||
-        bird.moveBird.x + bird.birdSize[0] / 2 >= background.pipeSouthImage.x ||
-        background.pipeSouthImage.x + background.pipeSouthImage.width === 164.5) &&
-        bird.moveBird.y + (bird.birdSize[1] / 2) >= background.pipeSouthImage.y) ||
-        bird.moveBird.y + bird.birdSize[1] === canvas.height) {
+    if(((bird.moveBird.x + bird.birdSize[0] / 2 >= background.pipeSouthImage.x - 20 &&
+        bird.moveBird.y + (bird.birdSize[1] / 2) >= background.pipeSouthImage.y - 20) ||
+       (bird.moveBird.x - bird.birdSize[0] === background.pipeSouthImage.x + background.pipeSouthSource.width + 40 &&
+        bird.moveBird.y + (bird.birdSize[1]) >= background.pipeSouthImage.y - 20)) ||
+        (bird.moveBird.y + (bird.birdSize[1] / 2) <= background.pipeNorthImage.y + (background.pipeNorthImage.height - 10) &&
+        bird.moveBird.x + (bird.birdSize[0] / 2) >= background.pipeNorthImage.x - 20
+        )||
+        bird.moveBird.y + bird.birdSize[1] >= canvas.height) {
       bird.gameOver();
       cancelAnimationFrame(frame)
     }
@@ -159,8 +162,14 @@ class Background {
       background.render();
     };
 
-    canvas.onclick = () => {
-      bird.birdY -= background.gap / 2;
+    // canvas.onclick = () => {
+    //   bird.birdY -= background.gap / 2;
+    // }
+
+    window.onkeydown = (e) => {
+      if (e.key === 'ArrowUp') {
+        bird.birdY -= background.gap / 2;
+      }
     }
 
 
