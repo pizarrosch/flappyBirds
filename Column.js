@@ -74,14 +74,14 @@ class Column {
       )
 
       column.pipe[i].x -= 3;
-      console.log(canvas.width - (column.pipeNorthImage.width * 3))
 
-      if (column.pipe[i].x === canvas.width - (column.pipeNorthImage.width * 3)) {
+      if (column.pipe[i].x  === canvas.width - (column.pipeNorthImage.width * 3)) {
         column.pipe.push({
           x: canvas.width + column.pipeNorthImage.width,
           y: Math.floor(Math.random() * column.pipeNorthSource.height) - column.pipeNorthSource.height
         })
       }
+      console.log(column.pipe[i].x)
     }
   }
 }

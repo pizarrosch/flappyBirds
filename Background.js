@@ -6,6 +6,7 @@ class Background {
     this.index = 0;
   }
 
+
   render() {
     background.index += 0.3;
 
@@ -56,14 +57,16 @@ class Background {
       bgMovePartTwo.height
     )
 
-    background.frame = requestAnimationFrame(background.render);
-
-    column.render();
-    bird.render(background);
+     requestAnimationFrame(background.render);
   }
 
   start() {
-    background.render();
+
+    background.frame = requestAnimationFrame(background.start);
+    column.render();
+
+    bird.render()
+
     // canvas.onclick = () => {
     //   bird.birdY -= background.gap / 2;
     // }

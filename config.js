@@ -9,7 +9,7 @@ image2.src = 'https://raw.githubusercontent.com/CodeExplainedRepo/Original-Flapp
 image2.id = 'gameOver';
 
 const startButton = document.querySelector('.start-button');
-const restartButton = document.querySelector('.button');
+const restartButton = document.querySelector('.restart-button');
 const endGameButton = document.querySelector('.end-game');
 
 const scoreDiv = document.querySelector('.score');

@@ -79,8 +79,13 @@ body {
 }
 
 .start-button {
-  display: none;
+  display: block;
   position: absolute;
   top: 350px;
   left: 150px;
+  cursor: pointer;
+}
+
+.invisible {
+  display: none;
 }
