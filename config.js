@@ -17,6 +17,7 @@ const bestScoreDiv = document.querySelector('.bestScore');
 const scoreTable = document.querySelector('.scoreTable');
 const scoreTableScore = document.querySelector('.theScore');
 const scoreTableBestScore = document.querySelector('.theBestScore');
+const countdownCount = document.querySelector('.countdown');
 
 const hitSound = new Audio('hit.mp3');
 const pointSound = new Audio('point.mp3');

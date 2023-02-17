@@ -1,12 +1,14 @@
 class Counter {
-  constructor(score, bestScore) {
+  constructor(score, bestScore, countdown) {
     this.score = score;
     this.bestScore = bestScore;
+    this.countdown = countdown;
   }
 
   render() {
     scoreDiv.innerHTML = `Score:${counter.score}`;
     bestScoreDiv.innerHTML = `Best:${counter.bestScore}`;
+    countdownCount.innerHTML = this.countdown;
   }
 
   updateScore() {
@@ -25,8 +27,10 @@ class Counter {
 
   reset() {
     counter.score = 0;
-    localStorage.clear();
     localStorage.setItem('bestScore', `${counter.score}`);
+    scoreDiv.innerHTML = `Score:${counter.score}`;
+    const bestScoreValue = localStorage.getItem('bestScore');
+    bestScoreDiv.innerHTML = `Best:${bestScoreValue}`;
   }
 
   showTable() {
@@ -36,5 +40,5 @@ class Counter {
   }
 }
 
-let counter = new Counter(0, 0);
+let counter = new Counter(0, 0, 5);
 counter.render();

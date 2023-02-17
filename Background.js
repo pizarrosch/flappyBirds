@@ -1,11 +1,7 @@
 class Background {
   frame;
-
-  constructor() {
-    this.speed = 4;
-    this.index = 0;
-  }
-
+  speed = 4;
+  index = 0;
 
   render() {
     background.index += 0.3;
@@ -56,26 +52,12 @@ class Background {
       bgMovePartTwo.width,
       bgMovePartTwo.height
     )
+    background.frame = requestAnimationFrame(background.render);
 
-     requestAnimationFrame(background.render);
-  }
-
-  start() {
-
-    background.frame = requestAnimationFrame(background.start);
-    column.render();
-
-    bird.render()
-
-    // canvas.onclick = () => {
-    //   bird.birdY -= background.gap / 2;
-    // }
-
-    window.onkeydown = (e) => {
-      if (e.key === 'ArrowUp') {
-        bird.birdY -= column.gap / 2;
-        wingFlapSound.play();
-      }
+    if (countdownCount.innerHTML === 'Go!') {
+      setTimeout(() => countdownCount.style.display = 'none', 500);
+      column.render();
+      bird.start();
     }
   }
 }

@@ -34,6 +34,15 @@ body {
   right: 0;
 }
 
+.countdown {
+  position: absolute;
+  font-size: 70px;
+  top: 200px;
+  left: 200px;
+  font-weight: bold;
+  color: lightgoldenrodyellow;
+}
+
 .scoreTable {
   display: none;
   flex-direction: column;
@@ -79,7 +88,7 @@ body {
 }
 
 .start-button {
-  display: block;
+  display: none;
   position: absolute;
   top: 350px;
   left: 150px;

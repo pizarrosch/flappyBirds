@@ -1,34 +1,41 @@
 class Game {
+
   start() {
     background.render();
 
     startButton.onclick = () => {
-      background.start()
-      startButton.style.display = 'none';
+      game.hideButton();
     }
 
     restartButton.onclick = () => {
-      location.reload();
-      background.start()
-      startButton.classList.add('invisible');
-
-      requestAnimationFrame(background.start)
-
-      restartButton.style.display = 'none';
-      endGameButton.style.display = 'none';
+     location.reload();
+     restartButton.style.display = 'none';
+     endGameButton.style.display = 'none';
     };
 
     endGameButton.onclick = () => {
-      location.reload();
       counter.reset();
-      restartButton.style.display = 'none';
       endGameButton.style.display = 'none';
+      scoreTable.style.display = 'none';
     };
 
     window.onload = () => {
       counter.getBestScore();
+      setInterval(() => {
+        if (countdownCount.innerHTML > 1) {
+          countdownCount.innerHTML -= 1
+        } else {
+          countdownCount.innerHTML = 'Go!';
+          countdownCount.style.left = '160px';
+        }
+      }, 1000);
     }
   }
+  hideButton() {
+    startButton.style.display = 'none';
+
+  }
+
 }
 
 let game = new Game();
