@@ -3,14 +3,10 @@ class Game {
   start() {
     background.render();
 
-    startButton.onclick = () => {
-      game.hideButton();
-    }
-
     restartButton.onclick = () => {
-     location.reload();
-     restartButton.style.display = 'none';
-     endGameButton.style.display = 'none';
+      location.reload();
+      restartButton.style.display = 'none';
+      endGameButton.style.display = 'none';
     };
 
     endGameButton.onclick = () => {
@@ -31,11 +27,6 @@ class Game {
       }, 1000);
     }
   }
-  hideButton() {
-    startButton.style.display = 'none';
-
-  }
-
 }
 
 let game = new Game();
