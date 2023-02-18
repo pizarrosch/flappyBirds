@@ -108,8 +108,6 @@ class Bird {
     restartButton.style.display = 'block';
     endGameButton.style.display = 'block';
     hitSound.play();
-    // game.gameOver();
-    // this.gameOver();
   }
 
   start() {
