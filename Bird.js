@@ -61,6 +61,10 @@ class Bird {
       bird.moveBird.x -= 50;
     }
 
+    if (bird.angle > 82) {
+      bird.angle = 83;
+    }
+
     if (((bird.moveBird.x + bird.birdSize[0] / 2 >= column.pipeSouthImage.x - 20 &&
           bird.moveBird.y + (bird.birdSize[1] / 2) >= column.pipeSouthImage.y - 15) ||
         (bird.moveBird.x - (bird.birdSize[0] / 2) === column.pipeSouthImage.x + column.pipeSouthSource.width &&
